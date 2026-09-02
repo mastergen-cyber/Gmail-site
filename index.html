@@ -5,33 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MASTERGEN SOFTWARE</title>
     <style>
-        /* Стили для кнопки выбора языка в правом верхнем углу */
-        .lang-switcher {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
-            background: rgba(26, 20, 13, 0.9);
-            border: 1px solid #eed993;
-            border-radius: 6px;
-            padding: 6px 12px;
-            font-family: Arial, sans-serif;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
-        .lang-switcher a {
-            text-decoration: none;
-            color: #9c824e;
-            font-weight: bold;
-            margin: 0 4px;
-            font-size: 13px;
-        }
-        .lang-switcher a.active {
-            color: #f3e5ab;
-            border-bottom: 2px solid #eed993;
-        }
-    </style>
+    html {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        background: #1a140d url("./texture.png") center top / cover fixed no-repeat;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background: transparent !important;
+        font-family: Arial, sans-serif;
+        position: relative;
+    }
+
+    /* One continuous texture covering the whole browser viewport and page. */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background: #1a140d url("./texture.png") center top / cover fixed no-repeat;
+        pointer-events: none;
+    }
+
+    .page-wrapper {
+        width: 100%;
+        background: transparent !important;
+    }
+
+    .lang-switcher {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        background: rgba(26, 20, 13, 0.9);
+        border: 1px solid #eed993;
+        border-radius: 6px;
+        padding: 6px 12px;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    .lang-switcher a {
+        text-decoration: none;
+        color: #9c824e;
+        font-weight: bold;
+        margin: 0 4px;
+        font-size: 13px;
+    }
+
+    .lang-switcher a.active {
+        color: #f3e5ab;
+        border-bottom: 2px solid #eed993;
+    }
+
+    .message {
+        background: transparent !important;
+    }
+
+    .message td {
+        background-color: transparent;
+    }
+</style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #1a140d; font-family: Arial, sans-serif; position: relative;">
+<body>
 
     <!-- Кнопка переключения языков -->
     <div class="lang-switcher">
@@ -42,12 +85,12 @@
 
     <center>
         <!-- Обертка письма -->
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed; background-color: #1a140d;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="page-wrapper" style="table-layout: fixed; background: transparent !important;">
             <tr>
-                <td align="center" style="padding: 40px 0;">
+                <td align="center" style="padding: 40px 0; background: transparent !important;">
                     
                     <!-- Само письмо -->
-                    <table border="0" cellpadding="0" cellspacing="0" width="600" style="background-color: #1a140d; background-image: url('текстура.png'); background-repeat: repeat; max-width: 600px; width: 100%; border: 1px solid #3d311c;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" class="message" style="max-width: 600px; width: 100%; border: 1px solid #3d311c; background: transparent !important;">
                         
                         <!-- Логотип -->
                         <tr>
@@ -71,9 +114,12 @@
                                 <p style="color: #e6d18c; font-size: 20px; line-height: 1.6; margin: 0 0 20px 0; text-align: left;">
                                     The cost of a 1-month activation key for the MASTERGEN ANALYZER program is $100 for partners (referrals) only; for everyone else, it is $200.
                                 </p>
-                                <p style="color: #e6d18c; font-size: 20px; line-height: 1.6; margin: 0; text-align: left;">
+                                <p style="color: #e6d18c; font-size: 20px; line-height: 1.6; margin: 0 0 20px 0; text-align: left;">
                                     The MASTERGEN 3000 trading robot is provided completely free of charge exclusively to partners (referrals). An activation key is issued once per trading account; a new activation key is required for each new trading account. No payment is required here. To register as a partner, download the software product, and pay for the activation key, please follow the links below:
-
+                                 </p>
+                                <p style="color: #e6d18c; font-size: 20px; line-height: 1.6; margin: 0 0 20px 0; text-align: left;">
+                                    Important Information:
+                                    Install the program on the PC or laptop you will use for trading on a regular basis. This is because if you switch to a different PC or laptop, the program will require a new activation key and you will have to pay for it again!
 
                                 </p>
                             </td>
